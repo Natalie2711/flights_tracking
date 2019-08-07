@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="lhttp://localhost:5000/socket.io/socket.io.js"></script>
+    <meta charset="UTF-8">
+    <title>Flights Tracking</title>
+    <style>
+        table, th, td {
+  border: 1px solid black;
+    </style>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+<body>
+    <p></p>
+     <table width="100%" id="table">
+         <tr>
+             <th>Passenger ID</th>
+             <th>Passenger name</th>
+             <th>Flight Code</th>
+             <th>Origin</th>
+             <th>Destination</th>
+             <th>Arrival time</th>
+             <th>Landing time</th>
+             <th>Status</th>
+         </tr>
+         {% for flight in flights %}
+         <tr id="{{ flight.passewdngers_id }}">
+             <td>{{ flight.passengers_id }}</td>
+             <td>{{ flight.passengers_name }}</td>
+             <td>{{ flight.flight_code }}</td>
+             <td>{{ flight.origin }}</td>
+             <td>{{ flight.destination }}</td>
+             <td>{{ flight.arrival_time }}</td>
+             <td>{{ flight.landing_time }}</td>
+             <td>{{ flight.status }}</td>
+         </tr>
+         {% endfor %}
+     </table>
+</body>
+</html>
